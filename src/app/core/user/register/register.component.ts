@@ -26,10 +26,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     }, 60000);
   }
 
-  close(): void {
-    this.visible = false;
-  }
-
   ngOnDestroy(): void {
     console.log('关闭');
     this.isLoadingTwo = false;

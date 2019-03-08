@@ -1,56 +1,48 @@
-<nz-drawer #nzDrawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"
-           [nzMaskClosable]="true"
-           [nzWidth]="560"
-           [nzVisible]="visible"
-           nzTitle="爷，来注册个！"
-           (nzOnClose)="close()">
-
-  <form nz-form class="login-form">
-    <div nz-row [nzGutter]="8">
-      <div nz-col [nzSpan]="20">
-        <nz-form-item>
-          <nz-form-label>手机号码</nz-form-label>
-          <nz-form-control>
-            <input type="text" nz-input placeholder="请输入手机号" [nzSize]="'large'">
-          </nz-form-control>
-        </nz-form-item>
-      </div>
+<form nz-form class="login-form">
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="20">
+      <nz-form-item>
+        <nz-form-label>手机号码</nz-form-label>
+        <nz-form-control>
+          <input type="text" nz-input placeholder="请输入手机号" [nzSize]="'large'">
+        </nz-form-control>
+      </nz-form-item>
     </div>
-    <div nz-row [nzGutter]="8">
-      <div nz-col [nzSpan]="20">
-        <nz-form-item>
-          <nz-form-label>验证码</nz-form-label>
-          <nz-form-control>
-            <nz-input-group nzSearch [nzSize]="'large'" [nzAddOnAfter]="suffixButton">
-              <input type="text" nz-input placeholder="请输入验证码" [nzSize]="'large'">
-            </nz-input-group>
-            <ng-template #suffixButton>
-              <button nz-button [nzType]="'default'" (click)="loadTwo()" [nzLoading]="isLoadingTwo" [nzSize]="'large'"
-                      nzSearch>
-                <i nz-icon type="mobile"></i>发送验证码
-              </button>
-            </ng-template>
-          </nz-form-control>
-        </nz-form-item>
-      </div>
+  </div>
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="20">
+      <nz-form-item>
+        <nz-form-label>验证码</nz-form-label>
+        <nz-form-control>
+          <nz-input-group nzSearch [nzSize]="'large'" [nzAddOnAfter]="suffixButton">
+            <input type="text" nz-input placeholder="请输入验证码" [nzSize]="'large'">
+          </nz-input-group>
+          <ng-template #suffixButton>
+            <button nz-button [nzType]="'default'" (click)="loadTwo()" [nzLoading]="isLoadingTwo" [nzSize]="'large'"
+                    nzSearch>
+              <i nz-icon type="mobile"></i>发送验证码
+            </button>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
     </div>
-    <div nz-row [nzGutter]="8" class="mgt-20">
-      <div nz-col [nzSpan]="20">
-        <nz-form-item nz-row style="margin-bottom:8px;">
-          <nz-form-control>
-            <button nz-button class="register-form-button" [nzType]="'primary'" [nzSize]="'large'">发送</button>
-          </nz-form-control>
-        </nz-form-item>
-      </div>
+  </div>
+  <div nz-row [nzGutter]="8" class="mgt-20">
+    <div nz-col [nzSpan]="20">
+      <nz-form-item nz-row style="margin-bottom:8px;">
+        <nz-form-control>
+          <button nz-button class="register-form-button" [nzType]="'primary'" [nzSize]="'large'">发送</button>
+        </nz-form-control>
+      </nz-form-item>
     </div>
+  </div>
 
-    <div *ngIf="isLoadingTwo" nz-row [nzGutter]="8" class="load-ad">
-      <nz-carousel nzAutoPlay>
-        <div nz-carousel-content *ngFor="let index of array"><h3>{{index}}</h3></div>
-      </nz-carousel>
-    </div>
+  <!--<div *ngIf="isLoadingTwo" nz-row [nzGutter]="8" class="load-ad">-->
+  <!--<nz-carousel nzAutoPlay>-->
+  <!--<div nz-carousel-content *ngFor="let index of array"><h3>{{index}}</h3></div>-->
+  <!--</nz-carousel>-->
+  <!--</div>-->
 
-    <!--TODO 等待验证码时可以展示漫画给用户-->
-  </form>
+  <!--TODO 等待验证码时可以展示漫画给用户-->
+</form>
 
-</nz-drawer>

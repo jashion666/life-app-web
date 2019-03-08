@@ -1,40 +1,45 @@
-<nz-header style="background: none;">
-  <div class="logo"></div>
-  <ul nz-menu [nzTheme]="'light'" [nzMode]="'horizontal'" style="line-height: 64px;">
-    <li nz-menu-item [nzSelected]="true">主页</li>
-    <li nz-menu-item>生活</li>
-    <li nz-menu-item>电影</li>
-    <li nz-menu-item>读书</li>
-    <li nz-menu-item>账单</li>
-    <li nz-menu-item>快递</li>
-    <li nz-menu-item>私人</li>
-    <li class="float-right">
-      <nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
-        <a nz-dropdown>
-          <nz-badge [nzCount]="5" style="margin-right: 24px;">
-            <nz-avatar nzIcon="user" [nzShape]="'square'"></nz-avatar>
-          </nz-badge>
-        </a>
-        <ul nz-menu class="user-operate">
-          <li nz-menu-item>个人中心</li>
-          <li nz-menu-item (click)="open()">
-            注册
-          </li>
-          <li nz-menu-item>通知</li>
-          <li nz-menu-divider></li>
-          <li nz-menu-item nzDisabled>disabled menu item</li>
-          <li nz-submenu>
-            <span title>sub menu</span>
-            <ul>
-              <li nz-menu-item>3rd menu item</li>
-              <li nz-menu-item>4th menu item</li>
-            </ul>
-          </li>
-          <li nz-menu-divider></li>
-          <li nz-menu-item>退出</li>
-        </ul>
-      </nz-dropdown>
+<nz-header style="background: none;padding: 0; height: 96px;">
+  <div [ngClass]="logo" (click)="toggleLogo()"></div>
+  <ul nz-menu [nzTheme]="'light'" [nzMode]="'horizontal'" style="line-height: 45px;height: 100%">
+    <li nz-submenu class="header-menu-li mgr-5-percent">
+      <span title><i nz-icon type="user"></i> 个人中心</span>
+      <ul>
+        <li nz-menu-item (click)="open()">
+          登陆
+        </li>
+        <li nz-menu-item (click)="open()">
+          注册
+        </li>
+        <li nz-menu-item>通知</li>
+        <li nz-menu-divider></li>
+        <li nz-submenu>
+          <span title>二级菜单</span>
+          <ul>
+            <li nz-menu-item>心愿</li>
+            <li nz-menu-item>item</li>
+          </ul>
+        </li>
+        <li nz-menu-item>
+          <span title>账单</span>
+        </li>
+        <li nz-menu-item>
+          <span title>快递</span>
+        </li>
+        <li nz-menu-divider></li>
+        <li nz-menu-item>退出</li>
+      </ul>
     </li>
+    <li nz-menu-item class="header-menu-li"><i nz-icon type="coffee"></i>coffee</li>
+    <li nz-menu-item class="header-menu-li">读书</li>
+    <li nz-menu-item class="header-menu-li">电影</li>
+    <li nz-menu-item class="header-menu-li" [nzSelected]="true">主页</li>
   </ul>
-  <app-register [visible]="visible"></app-register>
+  <nz-drawer #nzDrawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"
+             [nzMaskClosable]="true"
+             [nzWidth]="560"
+             [nzVisible]="visible"
+             nzTitle="爷，来注册个！"
+             (nzOnClose)="close()">
+    <app-register></app-register>
+  </nz-drawer>
 </nz-header>
