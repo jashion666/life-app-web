@@ -1,0 +1,22 @@
+.home-loading {
+  background-image: url("../../../assets/img/logo.png");
+  width: 30rem;
+  height: 80px;
+  background-size: cover;
+  top: 40%;
+  left: 50%;
+  background-position-y: -58px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+
+.loading-progress-bar {
+  position: absolute;
+  width: 65%;
+  margin-top: 50px;
+  margin-left: 59px;
+}

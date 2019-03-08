@@ -1,8 +1,17 @@
-<nz-layout class="layout">
-  <app-navbar></app-navbar>
+<nz-layout class="layout" *ngIf="!loadingComplete">
+  <nz-content style="position: fixed;width: 100%;height: 100%">
+    <div nz-row class="home-loading">
+      <nz-progress class="loading-progress-bar" [nzSize]="'small'" [nzPercent]="percentage"
+                   [nzShowInfo]="false">
+      </nz-progress>
+    </div>
+  </nz-content>
+</nz-layout>
+<nz-layout class="layout" *ngIf="loadingComplete">
+  <app-navbar (logoutEmitter)="logoutListener($event)"></app-navbar>
   <nz-content>
     <div style="background:#fff; padding: 24px; min-height: 280px;">
-      <nz-empty></nz-empty>
+      <nz-empty [nzNotFoundContent]="'暂无数据，那位大人正在施工中，请耐心等待。'"></nz-empty>
     </div>
   </nz-content>
   <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>
