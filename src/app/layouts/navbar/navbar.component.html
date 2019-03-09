@@ -29,11 +29,24 @@
         <li nz-menu-item (click)="logout()">退出</li>
       </ul>
     </li>
-    <li nz-menu-item class="header-menu-li"><i nz-icon type="coffee"></i>coffee</li>
+    <li nz-menu-item class="header-menu-li">
+      <i nz-icon type="coffee"></i>
+      <a class="inline-table" routerLink="/coffee">coffee</a>
+    </li>
     <li nz-menu-item class="header-menu-li"><i nz-icon type="book"></i>读书</li>
     <li nz-menu-item class="header-menu-li"><i nz-icon type="cloud"></i>音乐</li>
-    <li nz-menu-item class="header-menu-li"><i nz-icon type="video-camera"></i>电影</li>
-    <li nz-menu-item class="header-menu-li" [nzSelected]="true"><i nz-icon type="home"></i>主页</li>
+    <li nz-menu-item class="header-menu-li">
+      <i nz-icon type="video-camera"></i>
+      <a class="inline-table" routerLink="/movie">电影</a>
+    </li>
+    <li nz-menu-item class="header-menu-li">
+      <i nz-icon type="picture"></i>
+      <a class="inline-table" routerLink="/photo_wall">照片墙</a>
+    </li>
+    <li nz-menu-item class="header-menu-li" [nzSelected]="true">
+      <i nz-icon type="home"></i>
+      <a class="inline-table" routerLink="/">主页</a>
+    </li>
   </ul>
   <nz-drawer #nzDrawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"
              [nzMaskClosable]="true"

@@ -32,7 +32,7 @@ export class MainComponent implements OnInit {
         this.loadingComplete = true;
         clearInterval(loadingInterval);
       }
-      this.percentage = this.percentage + 50;
+      this.percentage = this.percentage + 100;
     }, 1000);
   }
 

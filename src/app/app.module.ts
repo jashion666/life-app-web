@@ -11,6 +11,10 @@ import zh from '@angular/common/locales/zh';
 import {MainComponent} from './layouts/main/main.component';
 import {NavbarComponent} from './layouts/navbar/navbar.component';
 import {RegisterComponent} from './core/user/register/register.component';
+import {MovieModule} from './movie/movie.module';
+import {PhotoWallModule} from './photo-wall/photo-wall.module';
+import {HomeModule} from './home/home.module';
+import {CoffeeModule} from './coffee/coffee.module';
 
 registerLocaleData(zh);
 
@@ -18,6 +22,10 @@ registerLocaleData(zh);
   declarations: [MainComponent, NavbarComponent, RegisterComponent
   ],
   imports: [
+    HomeModule,
+    MovieModule,
+    PhotoWallModule,
+    CoffeeModule,
     BrowserModule,
     AppRoutingModule,
     NgZorroAntdModule,
