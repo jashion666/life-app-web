@@ -1,59 +1,56 @@
-<nz-header style="background: none;padding: 0; height: 96px;">
-  <div [ngClass]="logo" (click)="toggleLogo()"></div>
-  <ul nz-menu [nzTheme]="'light'" [nzMode]="'horizontal'" style="line-height: 45px;height: 100%">
-    <li nz-submenu class="header-menu-li mgr-5-percent">
-      <span title><i nz-icon type="user"></i> 个人中心</span>
-      <ul>
-        <li nz-menu-item (click)="open()">
-          登陆
-        </li>
-        <li nz-menu-item (click)="open()">
-          注册
-        </li>
-        <li nz-menu-item>通知</li>
-        <li nz-menu-divider></li>
-        <li nz-submenu>
-          <span title>二级菜单</span>
-          <ul>
-            <li nz-menu-item>心愿</li>
-            <li nz-menu-item>item</li>
-          </ul>
-        </li>
+<nz-layout>
+  <nz-layout>
+    <nz-header style="background: #fff;padding-top: 2rem;height: 8rem;">
+      <button nz-button nzType="dashed" (click)="visible = true" [nzSize]="'large'" style="min-width: 5%;position: fixed;">
+        MENU<i nz-icon type="bars" theme="outline"></i>
+      </button>
+      <h1 style="text-align: center">LIFE IS FANTASIC</h1>
+    </nz-header>
+    <nz-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
+<ng-template #zeroTrigger>
+  <i nz-icon type="menu-fold" theme="outline"></i>
+</ng-template>
+
+<nz-drawer #nzDrawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"
+           [nzMaskClosable]="true"
+           [nzWidth]="240"
+           [nzVisible]="visible"
+           [nzPlacement]="'left'"
+           nzTitle="MENU"
+           (nzOnClose)="close()">
+  <!--<app-register></app-register>-->
+  <ul nz-menu [nzMode]="'inline'" [nzTheme]="'light'" class="first-menu">
+    <li nz-menu-item [nzSelected]="true">
+      <i nz-icon type="home"></i>
+      <a class="inline-table" routerLink="/" (click)="close()">主页</a>
+    </li>
+    <li nz-menu-item>
+      <i nz-icon type="picture"></i>
+      <a class="inline-table" routerLink="/photo_wall" (click)="close()">照片</a>
+    </li>
+    <li nz-menu-item>
+      <i nz-icon type="coffee"></i>
+      <a class="inline-table" routerLink="/coffee" (click)="close()">咖啡</a>
+    </li>
+    <li nz-submenu>
+      <span title><i nz-icon type="coffee"></i>生活</span>
+      <ul class="second-menu">
         <li nz-menu-item>
-          <span title>账单</span>
+          <i nz-icon type="video-camera"></i>
+          <a class="inline-table" routerLink="/movie" (click)="close()">电影</a>
         </li>
-        <li nz-menu-item>
-          <span title>快递</span>
-        </li>
-        <li nz-menu-divider></li>
-        <li nz-menu-item (click)="logout()">退出</li>
+        <li nz-menu-item><i nz-icon type="cloud"></i>音乐</li>
+        <li nz-menu-item><i nz-icon type="book"></i>读书</li>
+        <li nz-menu-item><i nz-icon type="book"></i>快递</li>
+        <li nz-menu-item><i nz-icon type="book"></i>账单</li>
       </ul>
     </li>
-    <li nz-menu-item class="header-menu-li">
-      <i nz-icon type="coffee"></i>
-      <a class="inline-table" routerLink="/coffee">coffee</a>
-    </li>
-    <li nz-menu-item class="header-menu-li"><i nz-icon type="book"></i>读书</li>
-    <li nz-menu-item class="header-menu-li"><i nz-icon type="cloud"></i>音乐</li>
-    <li nz-menu-item class="header-menu-li">
-      <i nz-icon type="video-camera"></i>
-      <a class="inline-table" routerLink="/movie">电影</a>
-    </li>
-    <li nz-menu-item class="header-menu-li">
-      <i nz-icon type="picture"></i>
-      <a class="inline-table" routerLink="/photo_wall">照片墙</a>
-    </li>
-    <li nz-menu-item class="header-menu-li" [nzSelected]="true">
-      <i nz-icon type="home"></i>
-      <a class="inline-table" routerLink="/">主页</a>
-    </li>
   </ul>
-  <nz-drawer #nzDrawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom':'53px' }"
-             [nzMaskClosable]="true"
-             [nzWidth]="560"
-             [nzVisible]="visible"
-             nzTitle="爷，来注册个！"
-             (nzOnClose)="close()">
-    <app-register></app-register>
-  </nz-drawer>
-</nz-header>
+</nz-drawer>

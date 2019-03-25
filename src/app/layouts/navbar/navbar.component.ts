@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   visible = false;
   logo: string;
   loadingInterval: any;
+  isCollapsed = false;
   @Output() logoutEmitter = new EventEmitter();
 
   constructor() {
@@ -18,9 +19,9 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit() {
     this.logo = DEFAULT_LOGO;
-    this.loadingInterval = setInterval(() => {
-      this.toggleLogo();
-    }, 10000);
+    // this.loadingInterval = setInterval(() => {
+    //   this.toggleLogo();
+    // }, 10000);
   }
 
   open(): void {
@@ -36,7 +37,11 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   toggleLogo() {
-    this.logo = this.logo === 'logo-toggle' ? 'logo' : 'logo-toggle';
+    // this.logo = this.logo === 'logo-toggle' ? 'logo' : 'logo-toggle';
+  }
+
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
 
   ngAfterViewInit(): void {

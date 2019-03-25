@@ -13,9 +13,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTest().subscribe(data => {
-      console.log(data);
-    });
+    // this.getTest().subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
   getTest(): Observable<HttpResponse<any>> {

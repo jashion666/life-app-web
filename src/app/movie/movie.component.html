@@ -1,3 +1,28 @@
-<p>
-  展示各种分类的电影，简介，豆瓣评分，以及下载链接，最好能在线播放
-</p>
+<div style="padding:30px;">
+  <div nz-row [nzGutter]="12">
+    <div nz-col [nzSpan]="8">
+      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate" [nzHoverable]="true">
+        <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+        <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+        <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+        <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+      </nz-card>
+    </div>
+  </div>
+</div>
+
+<ng-template #coverTemplate>
+  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+</ng-template>
