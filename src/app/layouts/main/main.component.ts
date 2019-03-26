@@ -33,7 +33,7 @@ export class MainComponent implements OnInit {
         clearInterval(loadingInterval);
       }
       this.percentage = this.percentage + 100;
-    }, 1000);
+    }, 10);
   }
 
 }

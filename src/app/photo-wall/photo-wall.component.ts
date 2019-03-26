@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-photo-wall',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoWallComponent implements OnInit {
 
-  constructor() { }
+  picList: any[];
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.picList = [];
+    for (let i = 0; i < 5; i++) {
+      this.picList.push(i);
+    }
   }
 
 }

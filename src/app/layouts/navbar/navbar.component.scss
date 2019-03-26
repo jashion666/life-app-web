@@ -10,25 +10,30 @@
   margin-left: 5%;
 }
 
-.nz-menu-class {
-  line-height: 45px;
-  height: 96px;
-  margin-top: -95px;
-  float: right;
-  margin-right: 8%;
+.header-text-1 {
+  display: block;
+  text-align: center;
+  font-weight: 900;
+}
+
+.header-text-2 {
+  display: none;
 }
 
 @media screen and (max-width: 420px) {
-  .nz-menu-class {
-    line-height: 45px;
-    height: 75px;
-    margin-top: -34px;
+  .menu-text {
+    display: none;
   }
-  .nz-menu-class li {
+  .menu-icon {
+    margin-left: 0 !important;
+  }
+  .header-text-1 {
+    display: none;
+  }
+  .header-text-2 {
+    display: block;
     text-align: center;
-    float: none;
-    padding-right: 15px;
-    margin-left: 5px;
+    font-weight: 900;
   }
 }
 
@@ -43,6 +48,7 @@
   font-family: Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   margin-bottom: -1rem;
   font-size: 17px;
+  font-weight: 900;
 }
 
 .second-menu li {
@@ -51,10 +57,21 @@
   margin-bottom: -17px;
 }
 
+.header {
+  background: #fff;
+  padding-top: 3rem;
+  height: 8rem;
+  line-height: 35px;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+}
+
 .content {
   background: #fff;
   min-height: 360px;
-  padding: 27px 20rem;
+  padding: 20px;
+  margin-top: 8rem;
 }
 
 .user-operate {

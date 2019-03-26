@@ -1,18 +1,25 @@
 <nz-layout class="layout" *ngIf="!loadingComplete">
+<!--<nz-layout class="layout">-->
   <nz-content style="position: fixed;width: 100%;height: 100%">
     <div nz-row class="home-loading">
+      <!--<ng-template #indicatorTemplate>-->
+        <!--&lt;!&ndash;<i nz-icon [nzType]="'loading-3-quarters'" style="font-size: 104px;" [nzSpin]="true" >&ndash;&gt;-->
+        <!--<i nz-icon [nzType]="'loading'" style="font-size: 56px;"></i>-->
+        <!--&lt;!&ndash;</i>&ndash;&gt;-->
+      <!--</ng-template>-->
+      <!--<nz-spin class="loading-progress-bar" [nzSize]="'large'" nzSimple [nzIndicator]="indicatorTemplate"-->
+               <!--nzTip="载入中..." [nzDelay]="500"></nz-spin>-->
       <nz-progress class="loading-progress-bar" [nzSize]="'small'" [nzPercent]="percentage"
-                   [nzShowInfo]="false">
+      [nzShowInfo]="false">
       </nz-progress>
     </div>
   </nz-content>
 </nz-layout>
 <app-navbar (logoutEmitter)="logoutListener($event)" *ngIf="loadingComplete"></app-navbar>
 <!--<nz-content>-->
-<!--<div style="background:#fff; padding: 0; min-height: 360px;">-->
-<!--<router-outlet></router-outlet>-->
-<!--<nz-empty [nzNotFoundContent]="'暂无数据！那位大人正在施工中，请耐心等待。'"></nz-empty>-->
-<!--</div>-->
+  <!--<div style="background:#fff; padding: 0; min-height: 360px;">-->
+    <!--<router-outlet></router-outlet>-->
+    <!--<nz-empty [nzNotFoundContent]="'暂无数据！那位大人正在施工中，请耐心等待。'"></nz-empty>-->
+  <!--</div>-->
 <!--</nz-content>-->
 <!--<nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>-->
-<!--</nz-layout>-->

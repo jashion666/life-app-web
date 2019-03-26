@@ -1,12 +1,15 @@
 <nz-layout>
   <nz-layout>
-    <nz-header style="background: #fff;padding-top: 2rem;height: 8rem;">
-      <button nz-button nzType="dashed" (click)="visible = true" [nzSize]="'large'" style="min-width: 5%;position: fixed;">
-        MENU<i nz-icon type="bars" theme="outline"></i>
+    <nz-header class="header">
+      <button nz-button nzType="default" (click)="visible = true" [nzSize]="'large'"
+              style="min-width: 5%;position: fixed; left: 5%;">
+        <span class="menu-text">MENU</span>
+        <i nz-icon type="bars" class="menu-icon" theme="outline"></i>
       </button>
-      <h1 style="text-align: center">LIFE IS FANTASIC</h1>
+      <h1 class="header-text-1">LIFE IS FANTASIC</h1>
+      <h1 class="header-text-2">LIFE.</h1>
     </nz-header>
-    <nz-content>
+    <nz-content style="margin-top: 1px">
       <div class="content">
         <router-outlet></router-outlet>
       </div>
@@ -33,24 +36,25 @@
     </li>
     <li nz-menu-item>
       <i nz-icon type="picture"></i>
-      <a class="inline-table" routerLink="/photo_wall" (click)="close()">照片</a>
+      <a class="inline-table" routerLink="/photo_wall" (click)="close()">旅行</a>
     </li>
     <li nz-menu-item>
       <i nz-icon type="coffee"></i>
       <a class="inline-table" routerLink="/coffee" (click)="close()">咖啡</a>
     </li>
-    <li nz-submenu>
-      <span title><i nz-icon type="coffee"></i>生活</span>
-      <ul class="second-menu">
-        <li nz-menu-item>
-          <i nz-icon type="video-camera"></i>
-          <a class="inline-table" routerLink="/movie" (click)="close()">电影</a>
-        </li>
-        <li nz-menu-item><i nz-icon type="cloud"></i>音乐</li>
-        <li nz-menu-item><i nz-icon type="book"></i>读书</li>
-        <li nz-menu-item><i nz-icon type="book"></i>快递</li>
-        <li nz-menu-item><i nz-icon type="book"></i>账单</li>
-      </ul>
+    <li nz-menu-item>
+      <i nz-icon type="coffee"></i>
+      <a class="inline-table" routerLink="/coffee" (click)="close()">生活</a>
+      <!--<ul class="second-menu">-->
+        <!--<li nz-menu-item>-->
+          <!--<i nz-icon type="video-camera"></i>-->
+          <!--<a class="inline-table" routerLink="/movie" (click)="close()">电影</a>-->
+        <!--</li>-->
+        <!--<li nz-menu-item><i nz-icon type="cloud"></i>音乐</li>-->
+        <!--<li nz-menu-item><i nz-icon type="book"></i>读书</li>-->
+        <!--<li nz-menu-item><i nz-icon type="book"></i>快递</li>-->
+        <!--<li nz-menu-item><i nz-icon type="book"></i>账单</li>-->
+      <!--</ul>-->
     </li>
   </ul>
 </nz-drawer>
