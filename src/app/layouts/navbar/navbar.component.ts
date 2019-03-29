@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {DEFAULT_LOGO} from '../../app.constants';
+import {AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -12,16 +12,16 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   logo: string;
   loadingInterval: any;
   isCollapsed = false;
+  nzSelected: number;
+  urlMap = {'/': 1, '/photo_wall': 2, '/coffee': 3};
+
   @Output() logoutEmitter = new EventEmitter();
 
-  constructor() {
+  constructor(public location: Location) {
   }
 
   ngOnInit() {
-    this.logo = DEFAULT_LOGO;
-    // this.loadingInterval = setInterval(() => {
-    //   this.toggleLogo();
-    // }, 10000);
+    this.nzSelected = this.urlMap[this.location.path()];
   }
 
   open(): void {

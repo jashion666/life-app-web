@@ -14,7 +14,7 @@
         <router-outlet></router-outlet>
       </div>
     </nz-content>
-    <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>
+    <nz-footer style="text-align: center;">LIFE APP ©2019 Implement By JASHION</nz-footer>
   </nz-layout>
 </nz-layout>
 <ng-template #zeroTrigger>
@@ -30,30 +30,30 @@
            (nzOnClose)="close()">
   <!--<app-register></app-register>-->
   <ul nz-menu [nzMode]="'inline'" [nzTheme]="'light'" class="first-menu">
-    <li nz-menu-item [nzSelected]="true">
+    <li nz-menu-item [nzSelected]="nzSelected === 1">
       <i nz-icon type="home"></i>
       <a class="inline-table" routerLink="/" (click)="close()">主页</a>
     </li>
-    <li nz-menu-item>
+    <li nz-menu-item [nzSelected]="nzSelected === 2">
       <i nz-icon type="picture"></i>
       <a class="inline-table" routerLink="/photo_wall" (click)="close()">旅行</a>
     </li>
-    <li nz-menu-item>
+    <li nz-menu-item [nzSelected]="nzSelected === 3">
       <i nz-icon type="coffee"></i>
       <a class="inline-table" routerLink="/coffee" (click)="close()">咖啡</a>
     </li>
-    <li nz-menu-item>
+    <li nz-menu-item [nzSelected]="nzSelected === 4">
       <i nz-icon type="coffee"></i>
       <a class="inline-table" routerLink="/coffee" (click)="close()">生活</a>
       <!--<ul class="second-menu">-->
-        <!--<li nz-menu-item>-->
-          <!--<i nz-icon type="video-camera"></i>-->
-          <!--<a class="inline-table" routerLink="/movie" (click)="close()">电影</a>-->
-        <!--</li>-->
-        <!--<li nz-menu-item><i nz-icon type="cloud"></i>音乐</li>-->
-        <!--<li nz-menu-item><i nz-icon type="book"></i>读书</li>-->
-        <!--<li nz-menu-item><i nz-icon type="book"></i>快递</li>-->
-        <!--<li nz-menu-item><i nz-icon type="book"></i>账单</li>-->
+      <!--<li nz-menu-item>-->
+      <!--<i nz-icon type="video-camera"></i>-->
+      <!--<a class="inline-table" routerLink="/movie" (click)="close()">电影</a>-->
+      <!--</li>-->
+      <!--<li nz-menu-item><i nz-icon type="cloud"></i>音乐</li>-->
+      <!--<li nz-menu-item><i nz-icon type="book"></i>读书</li>-->
+      <!--<li nz-menu-item><i nz-icon type="book"></i>快递</li>-->
+      <!--<li nz-menu-item><i nz-icon type="book"></i>账单</li>-->
       <!--</ul>-->
     </li>
   </ul>

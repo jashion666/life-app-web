@@ -6,7 +6,7 @@ import {NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {registerLocaleData} from '@angular/common';
+import {CommonModule, registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {MainComponent} from './layouts/main/main.component';
 import {NavbarComponent} from './layouts/navbar/navbar.component';
@@ -15,6 +15,8 @@ import {MovieModule} from './movie/movie.module';
 import {PhotoWallModule} from './photo-wall/photo-wall.module';
 import {HomeModule} from './home/home.module';
 import {CoffeeModule} from './coffee/coffee.module';
+import { LoadingComponent } from './shared/loading/loading.component';
+import {SharedModule} from './shared/shared.module';
 
 registerLocaleData(zh);
 
@@ -31,7 +33,9 @@ registerLocaleData(zh);
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule,
+    SharedModule
   ],
   providers: [{provide: NZ_I18N, useValue: zh_CN}],
   bootstrap: [MainComponent]
