@@ -11,6 +11,9 @@ export class PhotoWallComponent implements OnInit {
 
   photoWallModel: PhotoWallModel;
   loading: boolean;
+  loadingDetail: boolean;
+  defaultImage = '../../assets/img/blank.jpg';
+  coverImgIndex: any;
 
   constructor(private photoWallService: PhotoWallService) {
     this.photoWallModel = new PhotoWallModel();
@@ -18,6 +21,7 @@ export class PhotoWallComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
+    this.loadingDetail = false;
     this.loadPhoto();
   }
 
@@ -30,11 +34,13 @@ export class PhotoWallComponent implements OnInit {
         this.photoWallModel.hasNextPage = data.hasNextPage;
         this.photoWallModel.pageIndex = data.pageIndex;
         this.loading = false;
+        this.loadingDetail = false;
       }, 1000);
     });
   }
 
   loadMore() {
+    this.loadingDetail = true;
     this.photoWallModel.pageIndex++;
     this.loadPhoto();
   }

@@ -2,19 +2,25 @@
 
 <div nz-row [nzGutter]="{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4, xxl: 4 }">
   <div class="card-main card-style" nz-col [nzSpan]="4" [nzOffset]="1" [nzPush]="1"
-       *ngFor="let pic of photoWallModel.photoList;">
+       *ngFor="let pic of photoWallModel.photoList;index as i">
     <nz-card nzHoverable
              [nzHoverable]="true"
              [nzBodyStyle]="{padding: 0,zoom: 1}"
              [nzLoading]="loading">
       <div class="ant-card-cover" style="overflow: hidden;">
-        <img alt="example" src="{{pic.picSrc}}"/>
+        <img alt="example" [src]="pic.picSrc" *ngIf="i<20"/>
+        <img alt="example" [defaultImage]="defaultImage" [lazyLoad]="pic.picSrc" *ngIf="i>=20"/>
       </div>
       <nz-card-meta [nzTitle]="pic.title" [nzDescription]="pic.description" style="padding: 24px"></nz-card-meta>
     </nz-card>
   </div>
 </div>
-<div class="load-more" *ngIf="!loading && photoWallModel.hasNextPage">
+<app-loading [loading]="loadingDetail"></app-loading>
+<div class="load-more" *ngIf="!loading && photoWallModel.hasNextPage && !loadingDetail">
   <button nz-button style="min-width: 13%" (click)="loadMore()"> >> 载入更多</button>
 </div>
+<div nz-row *ngIf="!loading && !photoWallModel.hasNextPage" style="margin-top: 60px;">
+  <nz-empty [nzNotFoundContent]="'额。。。。没有更多了。'"></nz-empty>
+</div>
+
 <!--可参照网易云 镶嵌一条menu-->

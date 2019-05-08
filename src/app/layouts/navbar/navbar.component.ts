@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   loadingInterval: any;
   isCollapsed = false;
   nzSelected: number;
-  urlMap = {'/': 1, '/photo_wall': 2, '/coffee': 3};
+  urlMap = {'': 1, '/': 1, '/photo_wall': 2, '/coffee': 3};
 
   @Output() logoutEmitter = new EventEmitter();
 
